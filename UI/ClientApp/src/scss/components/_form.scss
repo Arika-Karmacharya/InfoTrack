@@ -1,0 +1,832 @@
+.input {
+  &-form {
+    padding: 3rem 4rem;
+    text-align: center;
+    &__group {
+      width: 100%;
+      margin: 0 auto;
+
+      label {
+        display: block;
+        font-size: $default-fontSize;
+        margin-bottom: 0.5rem;
+        color: #666;
+        text-align: left;
+      }
+    }
+    &__input {
+      width: 100%;
+      outline: none;
+      border: 1px solid #cacaca;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      background: #fff;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0.5rem 1rem rgba(#000, 0.1);
+        border-bottom: 2px solid #c3c3c3;
+      }
+
+      &:focus:invalid {
+        border-bottom: 2px solid #f41;
+      }
+      &:focus:valid {
+        border-bottom: 2px solid rgb(79, 175, 53);
+      }
+    }
+  }
+
+  &-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 3px 5px;
+    align-items: center;
+  }
+  &-image {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid #efefef;
+      object-fit: cover;
+    }
+  }
+  &-value {
+    font-size: 14px;
+    color: #444;
+  }
+}
+
+.css-1wa3eu0-placeholder {
+  @include placeholderText();
+}
+input,
+.MuiAutocomplete-root input {
+  @include placeholder {
+    @include placeholderText();
+  }
+  // &::-webkit-input-placeholder{
+  //   background: #333 !important;
+  //   color:#f41 !important
+  // }
+}
+
+.select {
+  .MuiFormControl-root {
+    .MuiInputBase-root {
+      margin-top: 1.2rem;
+    }
+  }
+}
+// .filters-grid {
+//   .autoselect {
+//     .MuiFormControl-root {
+//       .MuiInputBase-root {
+//         margin-top: 14px;
+//       }
+//     }
+//   }
+// }
+.MuiFormControl-root .MuiFormLabel-root {
+  // font-size: 14px !important;
+}
+.MuiInputLabel-shrink {
+  transform: translate(0, 1.5px) scale(1);
+  transform-origin: top left;
+}
+// .autoselect {
+//   .MuiFormControl-root {
+//     .MuiInputBase-root {
+//       margin-top: 1.2rem;
+//     }
+//   }
+// }
+
+.MuiFormControl-root {
+  .MuiFormLabel-root {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  // .MuiInputBase-root {
+  //   margin-top: 0.35rem;
+  // }
+}
+
+// svg {
+//   display: block;
+//   width: 1em;
+//   height: 1em;
+//   fill: currentColor;
+// }
+
+.select {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  margin-bottom: 1rem;
+
+  &:focus {
+    outline: 0;
+
+    & .selection {
+      box-shadow: 0 0 1px 1px $main;
+    }
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 13px;
+  color: #333;
+}
+
+.selection {
+  position: relative;
+  padding: 5px;
+  border: 1px solid $grey-border;
+  background: #fff;
+  margin-right: 1rem;
+  overflow: hidden;
+  height: 3.25rem;
+}
+
+.value {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.multiple {
+  padding-right: 30px;
+  margin-right: 5px;
+  background: $main-light;
+  color: $main;
+  margin-bottom: 5px;
+}
+
+.delete {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  display: block;
+  // padding: 10px;
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.placeholder {
+  padding: 5px 10px;
+  color: $grey-text;
+  cursor: default;
+}
+
+.arrow {
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  display: block;
+  padding: 10px;
+  font-size: 10px;
+  color: $grey-text;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: solid $grey-border;
+  border-width: 0 1px;
+  background: #fff;
+  z-index: 111;
+}
+
+.option {
+  padding: 10px 15px;
+  border-bottom: 1px solid $grey-border;
+  cursor: pointer;
+
+  &.selected {
+    border: 1px solid $main;
+    margin: -1px -1px 0;
+    background: $main-light;
+  }
+
+  &.focused {
+    background: $grey-background;
+  }
+}
+
+.checkbox {
+  content: "";
+  vertical-align: top;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  border: 1px solid $grey-border;
+  border-radius: 2px;
+  margin: 2px 12px 0 0;
+  color: #fff;
+  font-size: 10px;
+
+  .selected & {
+    border-color: $main-dark;
+    background: $main;
+  }
+}
+
+.form {
+  &-group {
+    // width:13rem;
+    // max-width: 15rem;
+    // min-width: 10rem;
+    // width: 100%;
+    // margin-right: 1rem;
+    margin-bottom: 1rem;
+    &.med {
+      max-width: 180px;
+    }
+    &.search {
+      max-width: 200px;
+      input {
+        border-radius: 0;
+        margin-top: 1.2rem;
+      }
+    }
+
+    &.error {
+      .form-group__label {
+        color: #{$color-red};
+      }
+      .bjPjlv {
+        border-color: #{$color-red} !important;
+      }
+      .form-group__input {
+        border-color: #{$color-red};
+      }
+      .form-group__message {
+        color: #{$color-red};
+        margin-top: 0.2rem;
+        font-weight: 400 !important;
+        display: block;
+        font-size: 12px;
+        margin-left: 1rem;
+      }
+    }
+    &__date {
+      max-width: 500px;
+      min-width: 250px;
+      @include flexRow;
+      align-items: center;
+      padding: 8px;
+      height: $input-height;
+      border-radius: $default-border-radius;
+      border-width: 1px;
+      border-style: solid;
+      border-color: $pms-input-border-color;
+      background-color: $pms-input-bg-color;
+      transition: box-shadow 0.2s ease 0s, border-color 0.2s ease 0s;
+
+      &:focus-within {
+        @include inputFocusStyle;
+
+        .form-group__date-icon {
+          color: lighten($btn-primary-color, 15);
+        }
+      }
+      &-input {
+        border: none;
+        font-size: $default-fontSize;
+        background-color: transparent;
+        flex: 1;
+        height: 32px;
+        &:focus {
+          outline: none;
+        }
+      }
+      &-icon {
+        width: 25px;
+        font-size: 20px;
+        color: $pms-icon-color;
+        transition: color ease 0.2;
+      }
+    }
+
+    &__input {
+      width: 100%;
+      outline: none;
+      padding: 10px 12px;
+      background: #fff;
+      font-size: 14px;
+      color: #444;
+      margin-top: 0.35rem;
+      height: $input-height;
+      border-radius: $default-border-radius;
+      border-width: 1px;
+      border-style: solid;
+      border-color: $pms-input-border-color;
+      background-color: $pms-input-bg-color;
+      transition: box-shadow 0.2s ease 0s, border-color 0.2s ease 0s;
+
+      &:focus {
+        @include inputFocusStyle;
+      }
+      &::-webkit-input-placeholder {
+        @include placeholderText();
+      }
+    }
+    &__textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 10px 12px;
+      border-radius: 4px;
+      outline: none;
+      border: 1px solid #cacaca;
+      background: $pms-input-bg-color;
+      font-size: 1rem;
+      color: #444;
+      margin-top: 0.35rem;
+      &:focus {
+        outline: none;
+        // box-shadow: 0 .5rem 1rem rgba(#000, .1);
+        border: 1px solid #40c5ff;
+      }
+    }
+    &__select {
+      width: 100%;
+      // height: 2rem;
+      // padding: .35rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 3px;
+      background: $pms-input-bg-color;
+      outline: none;
+      border: 1px solid #d9d9d9;
+      margin-top: 0.35rem;
+
+      &:focus {
+        outline: none;
+        // box-shadow: 0 .5rem 1rem rgba(#000, .1);
+        border: 1px solid #40c5ff;
+      }
+    }
+    &__label {
+      color: rgba(0, 0, 0, 0.7);
+      padding: 0;
+      font-size: 14px;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      /* line-height: 1; */
+      letter-spacing: 0.00938em;
+    }
+  }
+}
+
+// Custom CheckBox
+/* The container */
+.custom-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding-right: 10px;
+  margin-bottom: 12px;
+  padding-top: 4px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: rgba(0, 0, 0, 0.54);
+  //font-size: 0.8rem;
+  //font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.00938em;
+
+  span {
+    margin-right: 10px;
+  }
+
+  &.label-right {
+    padding-left: 20px;
+
+    span {
+      margin-left: 10px;
+    }
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/* Hide the browser's default checkbox */
+.custom-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  position: relative;
+  height: 22px;
+  border-radius: 3px;
+  width: 22px;
+  background-color: #fff;
+  border: 2px solid #dfe1e6;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-check:hover input ~ .checkmark {
+  background-color: #f5f5f5;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-check input:checked ~ .checkmark {
+  // background-color: #186faf;
+  // border:unset;
+  border-color: #2684ff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-check .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: solid #2684ff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.autocomplete {
+  // margin-bottom:20px;
+  margin-right: 15px;
+  &-label {
+    // transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+    //   transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    // color: rgba(0, 0, 0, 0.54);
+    // padding: 0;
+    // font-size: 1.2rem;
+    // display: block;
+    // font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    // font-weight: 400;
+    // line-height: 1;
+    // letter-spacing: 0.00938em;
+    // transform: translate(0, 1.5px) scale(0.75);
+    // transform-origin: top left;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 0;
+    font-size: 0.85rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    /* line-height: 1; */
+    letter-spacing: 0.00938em;
+  }
+  .MuiInputBase-root {
+    background-color: white;
+  }
+  .MuiAutocomplete-root {
+    .MuiFormLabel-root {
+      transform: translate(13px, 13px) scale(1);
+      font-size: 13px;
+    }
+    .MuiInputBase-root {
+      padding: 0px 4px !important;
+
+      input {
+        font-size: 13px;
+        padding: 11px !important;
+      }
+    }
+    .MuiOutlinedInput-root {
+      .MuiOutlinedInput-notchedOutline {
+        border: 1px solid #c4c4c4;
+      }
+      &:hover .MuiOutlinedInput-notchedOutline {
+        border-color: #c4c4c4 !important;
+      }
+    }
+  }
+}
+.auto-error {
+  label {
+    color: #{$color-red} !important;
+  }
+  .MuiInputBase-root {
+    &:before {
+      content: null !important;
+      border: 0 !important;
+    }
+  }
+  .MuiInputBase-input {
+    border: 1px solid #{$color-red} !important;
+
+    input {
+      &::placeholder {
+        color: #{$color-red-fade} !important;
+      }
+    }
+  }
+  .css-yk16xz-control {
+    border-color: #{$color-red} !important;
+  }
+  &__message {
+    color: #{$color-red};
+    font-size: 12px;
+    margin-top: 4px;
+    margin-left: 2px;
+  }
+  .daterangepicker {
+    border: 1px solid #{$color-red} !important;
+  }
+}
+
+.autocomplete-error {
+  .autocomplete
+    .MuiAutocomplete-root
+    .MuiOutlinedInput-root
+    .MuiOutlinedInput-notchedOutline {
+    border-color: #{$color-red} !important;
+  }
+  fieldset {
+    border-color: #{$color-red} !important;
+  }
+  label {
+    color: #{$color-red} !important;
+  }
+}
+
+.employees-select {
+  margin-top: 0.35rem;
+  & > div {
+    min-height: 35px !important;
+  }
+}
+
+.inline-form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  // max-width: 600px;
+  // width: 600px;
+  & > input {
+    padding: 8px 10px;
+    margin-top: 0 !important;
+    //width:calc(100% - 225px);
+    width: 300px;
+  }
+
+  & > textarea {
+    padding: 8px 10px;
+    margin-top: 0 !important;
+    // width:calc(100% - 225px);
+    width: 300px;
+  }
+
+  & > label {
+    width: 175px;
+    margin-right: 50px;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+  }
+  div[class^="makeStyles-root"] {
+    margin-right: unset;
+  }
+  .makeStyles-root-1 {
+    margin-right: unset;
+  }
+  .MuiInputBase-root {
+    &::before {
+      content: none;
+    }
+  }
+  .form-group__message {
+    margin-left: 1rem;
+  }
+}
+
+.hr {
+  width: 100%;
+  margin: 5px auto 15px;
+  background-color: #cacaca;
+  height: 1px;
+}
+
+// Tag Input
+
+.tags-input {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-height: 48px;
+  width: 480px;
+  // padding: 0 8px;
+  // border: 1px solid rgb(214, 216, 218);
+  border-radius: 6px;
+  &:focus-within {
+    border-bottom: 1px solid #f6e8fc;
+  }
+  input {
+    flex: 1;
+    border: none;
+    height: 46px;
+    font-size: 14px;
+    padding: 4px 0 0 0;
+    &:focus {
+      outline: transparent;
+    }
+  }
+}
+
+#tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+
+.tag {
+  width: auto;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ba6ddd;
+  padding: 0 12px;
+  font-size: 15px;
+  list-style: none;
+  border-radius: 12rem;
+  margin: 0 8px 8px 0;
+  background: #f6e8fc;
+  .tag-title {
+    // margin-top: 3px;
+  }
+  .tag-close-icon {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 8px;
+    color: #ba6ddd;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .tags-input {
+    width: calc(100vw - 32px);
+  }
+}
+
+.form {
+  &__radio-group {
+    //width: 49%;
+    display: inline-block;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    // width: 150px;
+
+    // @include respond(tab) {
+    //   width: 100%;
+    //   margin-bottom: 2rem;
+    // }
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__radio-button {
+    height: 22px;
+    width: 22px;
+    border: 2px solid #c3c3c3;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    // top: -0.4rem;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #2684ff;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button {
+    border-color: #2684ff;
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+.genericForm-group__input {
+  width: 100%;
+  outline: none;
+  padding: 8px 12px;
+  background: #fff;
+  background: var(--color-white);
+  font-size: 14px;
+  color: #444;
+  height: 36px;
+  border-radius: 3px;
+  border: thin solid #b7b7b7;
+  background-color: #fff;
+  transition: box-shadow 0.2s ease 0s, border-color 0.2s ease 0s;
+}
+.genericForm-group__textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #cacaca;
+  background: #fff;
+  font-size: 1rem;
+  color: #444;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.genericForm-group__textfield {
+  .MuiInputBase-input {
+    padding: 8px 12px;
+    height: 1.7em;
+  }
+}
+
+.vertical-chips {
+  .badges {
+    margin: 0;
+  }
+}
+.flex {
+  display: flex;
+  align-self: center;
+}
+.error {
+  .genericForm-group__input {
+    border: 1px solid #de2e21;
+  }
+  .genericForm-group__message {
+    color: #de2e21;
+    display: none;
+  }
+}
+.search-text {
+  color: #847d7d;
+}
